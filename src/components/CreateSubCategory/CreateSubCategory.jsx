@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import  Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert2';
 
@@ -29,10 +29,10 @@ const CreateSubCategory = () => {
      showCloseButton: true
      });
 
-    //  setTimeout(() => {
-    //     localStorage.setItem("subCategoryId", response.data.categoryAdded._id);
-    //     window.location = "/";  
-    //  }, 1000);
+     setTimeout(() => {
+        localStorage.setItem("subCategoryId", response.data.subCategoryAdded._id);
+        window.location = "/";  
+     }, 1000);
 
  }catch(error){
 
@@ -64,4 +64,4 @@ const CreateSubCategory = () => {
   )
 }
 
-export default CreateSubCategory
+export default CreateSubCategory;

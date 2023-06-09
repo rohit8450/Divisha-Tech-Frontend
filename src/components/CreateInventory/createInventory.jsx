@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import  Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert2';
 
 
-const createInventory = () => {
+const CreateInventory = () => {
 
         const {subCategoryId, categoryId} = useParams();
-        console.log(subCategoryId, " ", categoryId);
+        // console.log(subCategoryId, " ", categoryId);
     
       const [product_name, setProductName] = useState("");
       const [mrp, setMrp] = useState("");
@@ -38,10 +38,7 @@ const createInventory = () => {
          showCloseButton: true
          });
     
-         setTimeout(() => {
-            localStorage.setItem("storeId", response.data.categoryAdded._id);
-            window.location = "/";  
-         }, 1000);
+   
     
      }catch(error){
     
@@ -89,4 +86,4 @@ const createInventory = () => {
   )
 }
 
-export default createInventory;
+export default CreateInventory;

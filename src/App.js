@@ -8,7 +8,7 @@ import Home from "./components/Home/Home";
 import CreateStore from './components/CreateStore/CreateStore';
 import CreateCategory from './components/CreateCategory/CreateCategory';
 import CreateSubCategory from './components/CreateSubCategory/CreateSubCategory';
-import CreateInventory from './components/CreateInventory/createInventory';
+import CreateInventory from './components/CreateInventory/CreateInventory';
 import './App.css';
 
 
@@ -33,7 +33,7 @@ function App() {
           <Route exact path={`/createStore/:sellerId`} element={<CreateStore />} />
           <Route exact path={`/createCategory/:sellerId/:storeId`} element={<CreateCategory />} />
           <Route exact path={`/createSubCategory/:sellerId/:categoryId`} element={<CreateSubCategory />} />
-          <Route exact path={`/createInventory/:sellerId/:storeId`} element={<CreateInventory />} />
+          <Route exact path={`/createInventory/:categoryId/:subCategoryId`} element={<CreateInventory />} />
         </Routes>
  
       <Footer />
