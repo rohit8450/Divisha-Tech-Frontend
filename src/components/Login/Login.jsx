@@ -16,7 +16,8 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			const url = "http://localhost:8000/api/seller/login";
-			const { data: res } = await axios.post(url, data);
+			const res = await axios.post(url, data);
+			console.log(res)
 
 			Swal.fire({
 				title: `Logged in Sucessfully`,
@@ -25,7 +26,8 @@ const Login = () => {
 		    });
 			
 			setTimeout(() => {
-				localStorage.setItem("token", res.data);
+				localStorage.setItem("token", res.data.data);
+				localStorage.setItem("sellerId", res.data.seller);
 			   window.location = "/";	
 			}, 1000);
 	
