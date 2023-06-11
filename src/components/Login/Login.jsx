@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
-import "./Login.scss";
+import "./Login.css";
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
+
+
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -15,7 +17,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8000/api/seller/login";
+			const url = "https://divisha-tech-backend.onrender.com/api/seller/login";
 			const res = await axios.post(url, data);
 			console.log(res)
 
@@ -49,10 +51,13 @@ const Login = () => {
 
 	return (
 		<div className="login_container">
-			<div className="login_form_container">
-				<div className="left">
-					<form className="form_container" onSubmit={handleSubmit}>
-						<h1>Login to Your Account</h1>
+		<div className="container right-panel-active">
+	
+		
+	
+		<div className="container__form container--signin" >
+			<form action="#" className="form" id="form2" onSubmit={handleSubmit}>
+			<h1>Login to Your Account</h1>
 						<input
 							type="email"
 							placeholder="Email"
@@ -72,21 +77,20 @@ const Login = () => {
 							className="input"
 						/>
 						{error && <div className="error_msg">{error}</div>}
-						<button type="submit" className="green_btn">
+						<button type="submit" className="btn">
 							Sign In
 						</button>
-					</form>
-				</div>
-				<div className="right">
-					<h1>New Here ?</h1>
-					<Link to="/register">
-						<button type="button" className="white_btn">
-							Sign Up
-						</button>
-					</Link>
-				</div>
-			</div>
+			</form>
 		</div>
+	
+	
+		<div class="container__overlay">
+		<div class="overlay">
+			
+		</div>
+	</div>
+	</div>
+			</div>
 	);
 };
 

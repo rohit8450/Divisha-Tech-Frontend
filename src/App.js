@@ -9,6 +9,7 @@ import CreateStore from './components/CreateStore/CreateStore';
 import CreateCategory from './components/CreateCategory/CreateCategory';
 import CreateSubCategory from './components/CreateSubCategory/CreateSubCategory';
 import CreateInventory from './components/CreateInventory/CreateInventory';
+import { Navigate } from 'react-router-dom';
 import './App.css';
 
 
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path={`/createStore/:sellerId`} element={<CreateStore />} />
           <Route exact path={`/createCategory/:sellerId/:storeId`} element={<CreateCategory />} />

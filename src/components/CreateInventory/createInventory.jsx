@@ -29,7 +29,7 @@ const CreateInventory = () => {
            "product_images": product_images
        }
     
-       const response = await axios.post(`http://localhost:8000/api/seller/store/add-inventory/${categoryId}/${subCategoryId}`, inventoryDetails);
+       const response = await axios.post(`https://divisha-tech-backend.onrender.com/api/seller/store/add-inventory/${categoryId}/${subCategoryId}`, inventoryDetails);
        console.log(response);
     
        Swal.fire({

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Swal from 'sweetalert2';
 import { Link, useNavigate } from "react-router-dom";
-import  "./Register.scss";
+import  "./Register.css";
 
 const Register = () => {
 
@@ -25,7 +25,7 @@ const Register = () => {
 		e.preventDefault();
 		try {
 
-			const url = "http://localhost:8000/api/seller/register";
+			const url = "https://divisha-tech-backend.onrender.com/api/seller/register";
 			const { data: res } = await axios.post(url, data);
 
 			Swal.fire({
@@ -59,18 +59,11 @@ const Register = () => {
 
 	return (
 		<div className="signup_container">
-			<div className="signup_form_container">
-				<div className="left">
-					<h1>Welcome Back</h1>
-					<Link to="/login">
-						<button type="button" className="white_btn">
-							Sign in
-						</button>
-					</Link>
-				</div>
-				<div className="right">
-					<form className="form_container" onSubmit={handleSubmit}>
-						<h1>Create Account</h1>
+			<div className="container right-panel-active">
+	
+	<div className="container__form container--signup">
+		<form action="#" className="form" id="form1" onSubmit={handleSubmit}>
+		<h1 className="form__title">Create Account</h1>
 						<input
 							type="text"
 							placeholder="Business Name"
@@ -100,7 +93,7 @@ const Register = () => {
 							className="input"
 						/>
 						<input
-							type="confirmPassword"
+							type="password"
 							placeholder="ConfirmPassword"
 							name="confirmPassword"
 							onChange={handleChange}
@@ -109,12 +102,20 @@ const Register = () => {
 							className="input"
 						/>
 						{error && <div className="error_msg">{error}</div>}
-						<button type="submit" className="green_btn">
+						<button type="submit" className="btn">
 							Sign Up
 						</button>
-					</form>
-				</div>
-			</div>
+		</form>
+	</div>
+	<div className="container__overlay">
+		<div className="overlay">
+			{/* <div className="overlay__panel overlay--left">
+				<button className="btn" id="signIn">Sign In</button>
+			</div> */}
+			
+		</div>
+	</div>
+		</div>
 		</div>
 	);
 };
