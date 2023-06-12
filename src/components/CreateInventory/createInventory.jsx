@@ -53,7 +53,7 @@ const CreateInventory = () => {
     }
   return (
     <div>
-         <Container style={{padding: "7%"}}>
+         <Container style={{padding: "7%", fontSize: "20px",fontWeight: "bolder",}}>
           <Form onSubmit={(e) => e.preventDefault()}>
 
           <Form.Group className="mb-3">

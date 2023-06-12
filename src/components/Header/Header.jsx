@@ -6,12 +6,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import "./Header.scss";
 
+
 const Header = () => {
 
   const [authenticated, setauthenticated] = useState(null);
+  
+  const [sellerId, setSellerId] = useState("");
+
 
   useEffect(() => {
-
+    setSellerId(localStorage.getItem("sellerId"));
     if (localStorage.getItem("token") !== null) {
       setauthenticated(true);
     }
@@ -34,12 +38,13 @@ const Header = () => {
 
   return (
     <>
-     <div className='header'>
+     <div className='header'style={{backgroundColor:"skyblue"}}>
       <Navbar className='navbar'>
-        <Container>
+        <Container >
         {/* <Navbar.Brand href="#home">Navbar</Navbar.Brand> */}
           <Nav className="me-auto">
             <Nav.Link href="/home" style={{color:"darkblue", fontWeight:"bolder"}}>Home</Nav.Link>
+            <Nav.Link href={`/getSpecificSeller/${sellerId}`} style={{color:"darkblue", fontWeight:"bolder"}}>Sellers</Nav.Link>
           </Nav>
 
           {
@@ -52,7 +57,7 @@ const Header = () => {
               localStorage.getItem("token") === null &&
               <div className='nav-btn-container'>
               <button className='nav-btn'><Link to="/login">Login</Link></button>
-              <button className='nav-btn'><Link to="/register">Sign Up</Link></button>
+              <button className='nav-btn'><Link to="/register">SignUp</Link></button>
               </div>
           }
         </Container>

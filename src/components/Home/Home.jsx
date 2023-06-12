@@ -2,6 +2,7 @@ import React from 'react';
 import {useEffect,useState} from 'react';
 import { Navigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import './Home.scss';
 
 const Home = () => {
 
@@ -30,7 +31,7 @@ const Home = () => {
   } else{
 
   return (
-    <div>
+    <div style={{marginTop:"50px"}}>
        <Button variant="outline-info" onClick={() => window.location.href="/createStore/" + sellerId}>Create Store</Button>{' '}
        <Button variant="outline-info" onClick={() => window.location.href="/createCategory/" + sellerId + "/" + storeId }>Create Category</Button>{' '}
        <Button variant="outline-info" onClick={() => window.location.href="/createSubCategory/" + sellerId + "/" + categoryId }>Create Sub Category</Button>{' '}

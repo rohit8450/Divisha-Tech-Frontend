@@ -1,6 +1,4 @@
 .navbar{
-    // background: url('../../../public/cool-background.png');
-    // background-size: 100%;
     z-index: 1;
 
     .nav-links{
@@ -12,9 +10,18 @@
         position: relative;
         left: 12px;
         top: 10px;
-        color: rgb(27, 26, 26);
+        color: rgb(27, 27, 26);
     }
-
+//     .me-auto:hover{
+//     color: white;
+//     background-color: beige;
+//     box-shadow: 0 1rem 2rem rgba(black, .4);
+//     transform: rotate(5deg) scale(1.2);
+//     padding: 2px;
+//     list-style: none;
+// }
+    
+    
     #logo-img{
         width: 100px;
         height: 80px;
@@ -28,12 +35,13 @@
         outline: none;
         color: white;
         font-size: 18px;
+       
     }
 
     .nav-btn{
-        background-color: cyan;
+        background-color: rgb(78, 183, 221);
         border-radius: 30px;
-        margin: 0 20px;
+        margin: 0 10px;
         padding: 10px 20px;
 
         a{
@@ -43,7 +51,13 @@
     }
 
     .nav-btn:hover {
-        background-color: rgb(38, 168, 219);
+ // background-color: rgb(18, 93, 123);
+    color: white;
+    background-color: beige;
+    box-shadow: 0 1rem 2rem rgba(black, .4);
+    transform: rotate(5deg) scale(1.2);
+    padding: 2px;
+    list-style: none;
     }
 
     .white_btn{
