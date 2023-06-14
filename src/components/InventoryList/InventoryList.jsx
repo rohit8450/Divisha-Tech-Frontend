@@ -5,11 +5,11 @@ import ListGroup from "react-bootstrap/ListGroup";
 const InventoryList = ({ inventory }) => {
   return (
     <>
-      <div>
+      <div style={{display:"flex",gap:"20px",marginTop: "40px",marginLeft:"50px",flexWrap:"wrap",minWidth:"400px"}}>
         {inventory.map((item, index) => {
           return (
             <Card style={{ width: "18rem"}}>
-              <Card.Img variant="top" src={item.productImage} />
+              <Card.Img variant="top" src={item.product_images} />
               <Card.Body>
                 <Card.Title>{item.productName}</Card.Title>
               </Card.Body>

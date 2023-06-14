@@ -28,7 +28,7 @@ const Dropdown = ({items, title }) => {
               }
           }} = await axios.get(`https://divisha-tech-backend.onrender.com/api/seller/${sellerId}`);
           
-          console.log(category,subCategory)
+         
 
           setCategory(category);
           setSubCategory(subCategory);
