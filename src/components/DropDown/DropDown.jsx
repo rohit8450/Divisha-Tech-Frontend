@@ -6,8 +6,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import InventoryList from '../InventoryList/InventoryList';
 
-const Dropdown = ({items, title }) => { 
-    console.log(items, title)
+  const Dropdown = ({items, title }) => { 
 
   const [isOpen, setIsOpen] = useState(false); 
   const [selectedItem, setSelectedItem] = useState(null); 

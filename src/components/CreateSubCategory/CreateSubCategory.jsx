@@ -8,8 +8,7 @@ import Swal from 'sweetalert2';
 
 const CreateSubCategory = () => {
 
-    const {sellerId, categoryId} = useParams();
-    console.log(sellerId, " ", categoryId);
+  const {sellerId, categoryId} = useParams();
 
   const [subCategoryName, setSubCategoryName] = useState("");
 
@@ -21,7 +20,6 @@ const CreateSubCategory = () => {
    }
 
    const response = await axios.post(`https://divisha-tech-backend.onrender.com/api/seller/store/add-sub-category/${sellerId}/${categoryId}`, subCategoryDetails);
-   console.log(response);
 
    Swal.fire({
      title: `<strong>${response.data.message}</strong>`,

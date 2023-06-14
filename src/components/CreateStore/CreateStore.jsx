@@ -10,7 +10,6 @@ import './CreateStore.scss';
 const CreateStore = () => {
 
     const {sellerId} = useParams();
-    console.log(sellerId);
 
     const [gst, setGst] = useState("");
     const [logo, setLogo] = useState("");
@@ -27,8 +26,6 @@ const CreateStore = () => {
           }
 
           const response = await axios.post(`https://divisha-tech-backend.onrender.com/api/seller/store/create/${sellerId}`, storeDetails);
-          console.log(response);
-          console.log(response.data.storeAdded._id);
 
 
           Swal.fire({
