@@ -7,11 +7,9 @@ import axios from "axios";
 import Swal from 'sweetalert2';
 
 
-const CreateInventory = () => {
+const AddInventory = () => {
 
-        const {subCategoryId, categoryId} = useParams();
-        // console.log(subCategoryId, " ", categoryId);
-    
+      const {subCategoryId, categoryId} = useParams();
       const [product_name, setProductName] = useState("");
       const [mrp, setMrp] = useState("");
       const [selling_price, setSellingPrice] = useState("");
@@ -30,7 +28,7 @@ const CreateInventory = () => {
        }
     
        const response = await axios.post(`https://divisha-tech-backend.onrender.com/api/seller/store/add-inventory/${categoryId}/${subCategoryId}`, inventoryDetails);
-       console.log(response);
+     
     
        Swal.fire({
          title: `<strong>${response.data.message}</strong>`,
@@ -86,4 +84,4 @@ const CreateInventory = () => {
   )
 }
 
-export default CreateInventory;
+export default AddInventory;
