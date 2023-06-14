@@ -8,7 +8,7 @@ import Home from "./components/Home/Home";
 import CreateStore from './components/CreateStore/CreateStore';
 import CreateCategory from './components/CreateCategory/CreateCategory';
 import CreateSubCategory from './components/CreateSubCategory/CreateSubCategory';
-import CreateInventory from './components/CreateInventory/CreateInventory';
+import CreateInventory from './components/CreateInventory/CreateInventory.jsx';
 import SearchSeller from './components/SearchSeller/SearchSeller';
 import { Navigate } from 'react-router-dom';
 import './App.css';
